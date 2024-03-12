@@ -4,7 +4,13 @@ const app = express();
 app.use(express.json());
 
 app.post('/github', (req: Request, res: Response) => {
-    console.log(req.body);
+    if(req.body?.action === "opened"){
+        const resposne = {
+            "title": req.body.issue.title,
+            "url" : req.body.issue.url
+        }
+        res.json({"New issue oppened": resposne})
+    }
     return res.json({"message": req.body});
 });
 
