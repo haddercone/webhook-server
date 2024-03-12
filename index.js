@@ -10,6 +10,9 @@ app.post('/github', (req, res) => {
     console.log(req.body);
     return res.json({ "message": req.body });
 });
+app.get("/", (req, res) => {
+    res.json({ 'message': "Server Up and running" });
+});
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
 });
