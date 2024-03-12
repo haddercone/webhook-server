@@ -9,7 +9,7 @@ app.post('/github', (req: Request, res: Response) => {
             "title": req.body.issue.title,
             "url" : req.body.issue.url
         }
-        res.json({"New issue oppened": resposne})
+        return res.json({"New issue oppened": resposne})
     }
     return res.json({"message": req.body});
 });
