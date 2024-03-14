@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-
+require('./discord')
 const app = express();
 app.use(express.json());
 
